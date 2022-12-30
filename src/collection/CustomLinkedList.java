@@ -1,12 +1,14 @@
-package model;
+package collection;
+
+import model.Task;
 
 import java.util.*;
 
-public class CustomLinkedList {
+public class CustomLinkedList { //перенёс, написал кастомлинкедлист, касаемо ноды не увидел в тз где она должна быть
 
-    Map<Long, Integer> map = new HashMap();
+    private Map<Long, Integer> map = new HashMap(); //изменил модификаторы доступа
 
-    List<Task> list = new LinkedList();
+    private List<Task> list = new LinkedList();
 
     public void linkLast(Task task) {
         Integer elementIndex = map.get(task.getId()); // есть ли элемент в списке
@@ -14,7 +16,7 @@ public class CustomLinkedList {
             map.put(task.getId(), list.size());
             list.add(task);
         } else {
-            list.remove(elementIndex.intValue());
+            list.remove(elementIndex.intValue()); // нет, нельзя не приводить, т.к. не будет работать
             list.add(task);
             upDateMap();
         }

@@ -5,7 +5,7 @@ import service.InMemoryHistoryManager;
 import service.InMemoryTaskManager;
 import service.TaskManager;
 
-public class UtilityManagers {
+public final class UtilityManagers {
 
     public static TaskManager getManager(HistoryManager historyManager){
         return new InMemoryTaskManager(historyManager);

@@ -1,6 +1,6 @@
 package service;
 
-import model.CustomLinkedList;
+import collection.CustomLinkedList;
 import model.Task;
 
 import java.util.List;

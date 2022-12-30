@@ -4,10 +4,11 @@ import model.Epic;
 import model.SubTask;
 import model.Task;
 import model.TaskStatus;
-import utility.UtilityManagers;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class InMemoryTaskManager implements TaskManager {
 
@@ -15,7 +16,6 @@ public class InMemoryTaskManager implements TaskManager {
     private final Map<Long, Epic> epics = new HashMap<>(); // Создаю мап для эпиков: ключ(id), значение(эпик)
     private final Map<Long, Task> tasks = new HashMap<>();
     private final Map<Long, SubTask> subTasks = new HashMap<>();
-    final LinkedList<Task> history = new LinkedList<>();
 
     private HistoryManager historyManager;
 
@@ -169,4 +169,5 @@ public class InMemoryTaskManager implements TaskManager {
     public List<SubTask> getAllSubtaskByEpic(Epic epic) {
         return epic.getSubTaskList();
     }
+
 }
